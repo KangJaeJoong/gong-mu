@@ -1,0 +1,6 @@
+{
+  "name": "SORYU - Heritage",
+  "description": "A minimalist landing page inspired by traditional Korean aesthetics, focusing on the beauty of space (Yeobaek) and heritage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

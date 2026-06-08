@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>SORYU - Seon & Line | Heritage Landing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000613', // Deep Indigo
+                        accent: '#a3813d',  // Elegant Gold
+                        surface: '#ffffff', // Pure White
+                        'soft-gray': '#F5F5F5',
+                    },
+                    fontFamily: {
+                        serif: ['"Source Serif 4"', 'serif'],
+                        sans: ['"Hanken Grotesk"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .writing-vertical {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+        .lattice-divider {
+            background-image: radial-gradient(circle, #000613 1px, transparent 1px);
+            background-size: 16px 16px;
+            height: 32px;
+            width: 100%;
+            opacity: 0.1;
+        }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in-up 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-surface text-primary font-sans antialiased overflow-x-hidden selection:bg-accent selection:text-white">
+
+    <!-- Top Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-soft-gray">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <button id="menu-toggle" class="hover:text-accent transition-colors">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+            
+            <a href="/" class="font-serif text-3xl tracking-[0.3em] font-semibold text-primary pl-4">SORYU</a>
+            
+            <div class="flex items-center gap-6">
+                <button class="hover:text-accent transition-colors hidden md:block">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <button class="hover:text-accent transition-colors">
+                    <span class="material-symbols-outlined">shopping_bag</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Side Menu Overlay -->
+    <div id="side-menu" class="fixed inset-0 z-[60] invisible pointer-events-none transition-all duration-500">
+        <div id="menu-backdrop" class="absolute inset-0 bg-primary/20 opacity-0 transition-opacity duration-500"></div>
+        <nav id="menu-panel" class="absolute left-0 top-0 h-full w-full max-w-sm bg-white shadow-2xl -translate-x-full transition-transform duration-500 flex flex-col p-12">
+            <div class="flex justify-between items-center mb-16">
+                <span class="font-serif text-2xl tracking-[0.2em]">SORYU</span>
+                <button id="menu-close" class="hover:text-accent transition-colors">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            <ul class="flex flex-col gap-8 text-xl tracking-widest font-serif">
+                <li><a href="#" class="hover:text-accent transition-colors">HERITAGE</a></li>
+                <li><a href="#" class="hover:text-accent transition-colors">COLLECTION</a></li>
+                <li><a href="#" class="hover:text-accent transition-colors">SPACE</a></li>
+                <li><a href="#" class="hover:text-accent transition-colors">JOURNAL</a></li>
+            </ul>
+            <div class="mt-auto border-t pt-8 border-soft-gray flex flex-col gap-4 text-sm tracking-widest uppercase">
+                <a href="#" class="hover:text-accent">Contact</a>
+                <a href="#" class="hover:text-accent">Inquiry</a>
+                <a href="#" class="hover:text-accent">Stockists</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Hero -->
+    <main class="pt-20">
+        <section class="h-[90vh] bg-soft-gray relative overflow-hidden flex flex-col items-center justify-center px-6">
+            <div class="absolute inset-0 z-0 opacity-40">
+                <img src="https://images.unsplash.com/photo-1542152345-4206ca648b26?auto=format&fit=crop&q=80&w=2000" alt="Hanok detail" class="w-full h-full object-cover">
+            </div>
+            
+            <div class="relative z-10 text-center flex flex-col items-center">
+                <div class="writing-vertical font-serif text-6xl md:text-8xl tracking-[0.5em] text-primary/80 mb-12 animate-fade-in opacity-0">素流</div>
+                <h1 class="font-serif text-3xl md:text-4xl tracking-[0.4em] mb-6 animate-fade-in opacity-0" style="animation-delay: 0.2s;">본연의 흐름</h1>
+                <p class="max-w-md text-lg text-primary/60 tracking-widest leading-relaxed animate-fade-in opacity-0" style="animation-delay: 0.4s;">
+                    Embracing the profound beauty of space <br class="hidden md:block"> and the essence of heritage.
+                </p>
+                <div class="mt-12 animate-fade-in opacity-0" style="animation-delay: 0.6s;">
+                    <span class="material-symbols-outlined text-4xl animate-bounce">expand_more</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section class="py-24 md:py-40 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+            <div class="flex flex-col items-start gap-8">
+                <span class="text-accent font-semibold tracking-[0.3em] uppercase text-sm">Philosophy</span>
+                <h2 class="font-serif text-4xl md:text-6xl leading-tight">간격의 미<br>The Beauty <br>of Spacing</h2>
+                <div class="w-12 h-px bg-accent"></div>
+                <p class="text-lg text-primary/70 leading-relaxed tracking-wider max-w-lg">
+                    True elegance is not found in the abundance of adornment, but in the deliberate cultivation of space. 
+                    <i>Yeobaek</i> is the canvas upon which our heritage breathes.
+                </p>
+                <a href="#" class="group flex items-center gap-4 text-sm tracking-[0.2em] font-semibold border-b border-primary/20 pb-2 hover:border-accent transition-all">
+                    DISCOVER MORE
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_right_alt</span>
+                </a>
+            </div>
+            <div class="relative border border-soft-gray p-6">
+                <div class="aspect-[4/5] bg-soft-gray overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1615485925600-97237c4fc1ec?auto=format&fit=crop&q=80&w=1000" alt="Minimalist object" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-10 -right-10 hidden lg:block w-40 h-40 bg-white border border-soft-gray p-4">
+                    <div class="w-full h-full border border-soft-gray flex items-center justify-center font-serif text-2xl opacity-30">素</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lattice Divider -->
+        <div class="lattice-divider"></div>
+
+        <!-- Collections Peek -->
+        <section class="py-24 bg-soft-gray/30">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+                    <div>
+                        <span class="text-accent font-semibold tracking-[0.3em] uppercase text-sm mb-4 block">Objects</span>
+                        <h3 class="font-serif text-4xl md:text-5xl">선(Line)과 흐름(Flow)</h3>
+                    </div>
+                    <p class="max-w-sm text-primary/60 tracking-widest text-sm leading-relaxed">
+                        Exquisite pieces that redefine modern living through the lens of traditional craftsmanship.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-12">
+                    <!-- Item 1 -->
+                    <div class="flex flex-col gap-6 group">
+                        <div class="aspect-square bg-white border border-soft-gray overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&q=80&w=1000" alt="Product" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-serif text-xl mb-1">Seon Vessel No.4</h4>
+                                <span class="text-xs text-primary/40 tracking-widest">CERAMIC</span>
+                            </div>
+                            <span class="text-sm font-semibold tracking-tighter">₩240,000</span>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="flex flex-col gap-6 group md:translate-y-12">
+                        <div class="aspect-square bg-white border border-soft-gray overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1594910413528-9430d8bb0977?auto=format&fit=crop&q=80&w=1000" alt="Product" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-serif text-xl mb-1">Indigo Silk Scarf</h4>
+                                <span class="text-xs text-primary/40 tracking-widest">TEXTILE</span>
+                            </div>
+                            <span class="text-sm font-semibold tracking-tighter">₩180,000</span>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="flex flex-col gap-6 group">
+                        <div class="aspect-square bg-white border border-soft-gray overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1582531393083-f36531980838?auto=format&fit=crop&q=80&w=1000" alt="Product" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-serif text-xl mb-1">Walnut Tray Seon</h4>
+                                <span class="text-xs text-primary/40 tracking-widest">WOODWORK</span>
+                            </div>
+                            <span class="text-sm font-semibold tracking-tighter">₩320,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Decorative Divider -->
+        <div class="flex justify-center py-32 opacity-10">
+            <div class="w-px h-64 bg-primary"></div>
+        </div>
+
+        <!-- Vision Section -->
+        <section class="pb-40 max-w-3xl mx-auto px-6 text-center">
+            <h2 class="font-serif text-4xl md:text-5xl mb-12 italic">"Soryu is a return to the essence of life's rhythm."</h2>
+            <p class="text-primary/60 tracking-[0.2em] leading-loose">
+                We believe that the objects we surround ourselves with should not just clutter our environment, but open windows into a deeper connection with ourselves and our origins.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-16">
+            <div class="md:col-span-2">
+                <span class="font-serif text-4xl tracking-[0.3em] block mb-8">SORYU</span>
+                <p class="text-white/50 tracking-widest text-sm leading-relaxed max-w-sm">
+                    Preserving the silent beauty of Korean heritage for a contemporary global audience.
+                </p>
+            </div>
+            <div class="flex flex-col gap-4 text-sm tracking-widest">
+                <span class="text-accent font-bold uppercase mb-4">Explore</span>
+                <a href="#" class="hover:text-accent transition-colors">Our Story</a>
+                <a href="#" class="hover:text-accent transition-colors">Craftsmanship</a>
+                <a href="#" class="hover:text-accent transition-colors">Spaces</a>
+                <a href="#" class="hover:text-accent transition-colors">Journal</a>
+            </div>
+            <div class="flex flex-col gap-4 text-sm tracking-widest">
+                <span class="text-accent font-bold uppercase mb-4">Legal</span>
+                <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-accent transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-accent transition-colors">Inquiry</a>
+                <div class="flex gap-4 mt-8">
+                    <a href="#" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-accent transition-colors">
+                        <span class="material-symbols-outlined text-base">arrow_outward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-24 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 opacity-40 text-xs tracking-widest">
+            <span>© 2024 SORYU HERITAGE. ALL RIGHTS RESERVED.</span>
+            <div class="flex gap-8">
+                <span>INSTAGRAM</span>
+                <span>PINTEREST</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const sideMenu = document.getElementById('side-menu');
+        const menuBackdrop = document.getElementById('menu-backdrop');
+        const menuPanel = document.getElementById('menu-panel');
+
+        function openMenu() {
+            sideMenu.classList.remove('invisible');
+            sideMenu.classList.add('visible');
+            sideMenu.classList.add('pointer-events-auto');
+            setTimeout(() => {
+                menuBackdrop.classList.replace('opacity-0', 'opacity-100');
+                menuPanel.classList.replace('-translate-x-full', 'translate-x-0');
+            }, 10);
+        }
+
+        function closeMenu() {
+            menuBackdrop.classList.replace('opacity-100', 'opacity-0');
+            menuPanel.classList.replace('translate-x-0', '-translate-x-full');
+            setTimeout(() => {
+                sideMenu.classList.remove('visible');
+                sideMenu.classList.add('invisible');
+                sideMenu.classList.remove('pointer-events-auto');
+            }, 500);
+        }
+
+        menuToggle.addEventListener('click', openMenu);
+        menuClose.addEventListener('click', closeMenu);
+        menuBackdrop.addEventListener('click', closeMenu);
+
+        // Simple Fade-in Observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section h2, section p, .grid > div').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
